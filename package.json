@@ -1,0 +1,23 @@
+{
+  "name": "js-use-state",
+  "version": "0.0.1",
+  "description": "Vanilla JS naive implementation of React's useState hook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codypersinger/js-use-state.git"
+  },
+  "keywords": [
+    "useState",
+    "hook"
+  ],
+  "author": "Cody Persinger",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/codypersinger/js-use-state/issues"
+  },
+  "homepage": "https://github.com/codypersinger/js-use-state#readme"
+}
