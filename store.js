@@ -2,16 +2,21 @@ import { render } from './render';
 
 const store = {};
 
-const updateStore = async updater => {
-	const nextState = Object.assign(store, await updater(store));
-	render(nextState);
-
-	return nextState;
-};
-
-export const useState = initialState => {
+export const useState = (initialState, sideEffectsCallback) => {
 	const nextState = Object.assign(store, initialState);
 	render(nextState);
 
-	return [ nextState, updateStore ];
+	return [
+		nextState,
+		async updaterFunction => {
+			const nextState = Object.assign(store, await (updaterFunction(store)));
+			render(nextState);
+
+			if (sideEffectsCallback) {
+				sideEffectsCallback(nextState);
+			}
+
+			return nextState;
+		},
+	];
 };
