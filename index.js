@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     setTimeout(() => {
-        setState(oldState => ({ ...oldState, count: oldState.count++ }));
+        setState(oldState => ({ ...oldState, count: ++oldState.count }));
     }, 3000);
 });
 
